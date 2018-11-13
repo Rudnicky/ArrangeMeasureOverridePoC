@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrangeMeasureOverridePoC", "ArrangeMeasureOverridePoC\ArrangeMeasureOverridePoC.csproj", "{34F77B0A-262F-4FD4-88C3-649CBE40ADAB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{34F77B0A-262F-4FD4-88C3-649CBE40ADAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34F77B0A-262F-4FD4-88C3-649CBE40ADAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34F77B0A-262F-4FD4-88C3-649CBE40ADAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34F77B0A-262F-4FD4-88C3-649CBE40ADAB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9E892052-203F-461E-B4B3-36167D2670E6}
+	EndGlobalSection
+EndGlobal
