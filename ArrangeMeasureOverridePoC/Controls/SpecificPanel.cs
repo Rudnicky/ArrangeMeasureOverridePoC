@@ -7,12 +7,14 @@ using System.Windows.Controls;
 
 namespace ArrangeMeasureOverridePoC.Controls
 {
+    [Obsolete("Whole class is deprecated because it's made totally wrong. Use different panel instead")]
     public sealed class SpecificPanel : Panel
     {
         #region Private Fields
         private const double ADDITIONAL_SPACE = 20.0;
         private const int DECIMAL_PLACES = 0;
         private double _totalChildWidth;
+        private int _numberOfChildren;
         #endregion
 
         #region Protected Methods
@@ -44,6 +46,7 @@ namespace ArrangeMeasureOverridePoC.Controls
         // call Arrange(Rect) on each child, otherwise the child elements will not be rendered. 
         protected override Size ArrangeOverride(Size finalSize)
         {
+            this._numberOfChildren = 0;
             var listOfWidths = new List<double>();
             var location = new Point();
 
@@ -71,7 +74,7 @@ namespace ArrangeMeasureOverridePoC.Controls
                         }
                     }
                 }
-
+               
                 // first pass won't have any desired sizes
                 // second pass should have.
                 if (listOfWidths.Count > 0)
@@ -94,6 +97,7 @@ namespace ArrangeMeasureOverridePoC.Controls
                                     if (frameworkElement != null)
                                     {
                                         frameworkElement.Width = maxValue;
+                                        _numberOfChildren++;
                                     }
                                 }
                             }
@@ -101,9 +105,7 @@ namespace ArrangeMeasureOverridePoC.Controls
                     }
 
                     // calculates width of whole item
-                    // 3 - is a number of items inside of our stackpanel
-                    // this implementation is not generic obviously
-                    _totalChildWidth = Math.Round(((maxValue * 3) + ADDITIONAL_SPACE), DECIMAL_PLACES);
+                    _totalChildWidth = Math.Round(((maxValue * _numberOfChildren) + ADDITIONAL_SPACE), DECIMAL_PLACES);
 
                     // this must be called in order to re-calculate 
                     // each child size that it's needed to display 

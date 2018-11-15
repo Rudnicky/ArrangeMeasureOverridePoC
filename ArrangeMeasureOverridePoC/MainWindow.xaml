@@ -8,35 +8,28 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <ListView ItemsSource="{Binding Customers}"
+                  HorizontalAlignment="Stretch"
                   HorizontalContentAlignment="Stretch">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <!--<p:CustomPanel HorizontalAlignment="Stretch"/>-->
-                    <p:SpecificPanel HorizontalAlignment="Stretch" />
-                    <!--<StackPanel Orientation="Vertical" HorizontalAlignment="Stretch"/>-->
+                    <!--<p:ProPanel HorizontalAlignment="Stretch" Orientation="Vertical" />-->
+                    <StackPanel Orientation="Vertical" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid HorizontalAlignment="Stretch">
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch">
-                            <Border BorderBrush="DeepSkyBlue" BorderThickness="2" CornerRadius="5">
-                                <TextBlock Text="{Binding Name}" />
-                            </Border>
-                            <Border BorderBrush="DodgerBlue" BorderThickness="2" CornerRadius="5">
-                                <TextBlock Text="{Binding Surname}" />
-                            </Border>
-                            <Border BorderBrush="RoyalBlue" BorderThickness="2" CornerRadius="5">
-                                <TextBlock Text="{Binding Age}" />
-                            </Border>
-                        </StackPanel>
-                    </Grid>
+                    <p:ProPanel Orientation="Horizontal" Spacing="0,0,5,0" HorizontalAlignment="Stretch">
+                        <Button Content="{Binding Name}"  />
+                        <Button Content="{Binding Surname}"  />
+                        <Button Content="{Binding Age}" />
+                    </p:ProPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
-                    <Setter Property="HorizontalAlignment" Value="Left" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>

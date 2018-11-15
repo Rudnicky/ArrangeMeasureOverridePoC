@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Controls\ProPanel.cs" />
     <Compile Include="Controls\SpecificPanel.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Utils\VisualTreeTraverseHelper.cs" />
